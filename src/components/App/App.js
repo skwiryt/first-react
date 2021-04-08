@@ -22,10 +22,10 @@ class App extends React.Component {
             title,
             description,
             image,
-            columns: []
-          }
-        ]
-      }
+            columns: [],
+          },
+        ],
+      };
     });
   }
   
@@ -44,7 +44,7 @@ class App extends React.Component {
         </div>
         
       </main>
-    )
+    );
   }
 }
 export default App;
