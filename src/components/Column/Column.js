@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './Column.scss';
 import PropTypes from 'prop-types';
 import Card from '../Card/Card';
-// import Creator from '../Creator/Creator';
-// import {settings} from '../../data/dataStore';
+import Creator from '../Creator/Creator';
+import {settings} from '../../data/dataStore';
 import Icon from '../Icon/Icon';
 
 
@@ -12,6 +12,11 @@ class Column extends React.Component {
     title: PropTypes.node,
     icon: PropTypes.string,
     cards: PropTypes.array,
+    addCard: PropTypes.func,
+  }
+
+  static defaultProps = {
+    icon: settings.defaultColumnIcon,
   }
   /*
   state = {
@@ -33,7 +38,7 @@ class Column extends React.Component {
   };
   */
   render() {
-    const {title, icon, cards} = this.props;
+    const {title, icon, cards, addCard} = this.props;
     return (      
       <section className={styles.component}>
         <h3 className={styles.title}>          
@@ -56,6 +61,9 @@ class Column extends React.Component {
           {cards.map(({id, title}) => (
             <Card key={id} title={title} />
           ))}
+        </div>
+        <div >
+          <Creator text={settings.cardCreatorText} action={addCard}/>
         </div>
       </section>
     );
