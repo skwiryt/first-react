@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './App.scss';
 import List from '../List/ListContainer';
+import Search from '../Search/SearchContainer';
 // import {pageContents, listData, settings} from '../../data/dataStore';
 // import Creator from '../Creator/Creator';
 import PropTypes from 'prop-types';
@@ -43,6 +44,7 @@ class App extends React.Component {
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
         <h2 className={styles.subtitle}>{subtitle}</h2>
+        <Search />
         {/*
         <div className={styles.creator}>
           <Creator text={settings.listCreatorText} action={this.addList} />
