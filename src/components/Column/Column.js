@@ -6,7 +6,7 @@ import Creator from '../Creator/Creator';
 import {settings} from '../../data/dataStore';
 import Icon from '../Icon/Icon';
 
-
+/*
 class Column extends React.Component {
   static propTypes = {
     title: PropTypes.node,
@@ -18,25 +18,7 @@ class Column extends React.Component {
   static defaultProps = {
     icon: settings.defaultColumnIcon,
   }
-  /*
-  state = {
-    cards: this.props.cards || [],
-  };
-
-  addCard = (title) => {
-    this.setState(state => (
-      {
-        cards: [
-          ...state.cards,
-          {
-            key: state.cards.length ? state.cards[state.cards.length-1].key+1 : 0,
-            title,
-          },
-        ],
-      }
-    ));
-  };
-  */
+  
   render() {
     const {title, icon, cards, addCard} = this.props;
     return (      
@@ -47,16 +29,6 @@ class Column extends React.Component {
           </span>
           {title}
         </h3>
-        {/*
-        <div>
-          {this.state.cards.map(({key, title}) => (
-            <Card key={key} title={title} />
-          ))}
-        </div>
-        <div >
-          <Creator text={settings.cardCreatorText} action={this.addCard}/>
-        </div>
-          */}
         <div>
           {cards.map(({id, title}) => (
             <Card key={id} title={title} />
@@ -69,5 +41,39 @@ class Column extends React.Component {
     );
   }
 }
+*/
+
+const Column = props => {
+  const {title, icon, cards, addCard} = props;
+  return (      
+    <section className={styles.component}>
+      <h3 className={styles.title}>          
+        <span className={styles.icon}>
+          <Icon name={icon} />
+        </span>
+        {title}
+      </h3>
+      <div>
+        {cards.map(({id, title}) => (
+          <Card key={id} title={title} />
+        ))}
+      </div>
+      <div >
+        <Creator text={settings.cardCreatorText} action={addCard}/>
+      </div>
+    </section>
+  );
+};
+
+Column.propTypes = {
+  title: PropTypes.node,
+  icon: PropTypes.string,
+  cards: PropTypes.array,
+  addCard: PropTypes.func,
+};
+
+Column.defaultProps = {
+  icon: settings.defaultColumnIcon,
+};
 
 export default Column;
