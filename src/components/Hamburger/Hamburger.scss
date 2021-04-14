@@ -1,0 +1,23 @@
+@import '../../styles/settings.scss';
+
+.component {
+  width: 100%;  
+
+  .button {
+    text-align: right;
+  }
+
+  .menu {
+    opacity: 0;
+    height: 0;
+    transition: all 200ms;
+    margin-top: $base-size;
+    margin-left: 2*$base-size;
+
+    &.menuShown {      
+      opacity: 1;
+      height:auto;      
+    }
+  }
+
+}

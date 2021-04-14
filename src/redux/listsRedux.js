@@ -12,9 +12,7 @@ export const ADD_LIST = createActionName('ADD_LIST');
 
 // action creators
 export const createActionAddList = payload => {
-  const description = prompt('Please, give the description of the list');
-  const image = prompt('Please, give url of the image');
-  return { payload: { ...payload, id: shortid.generate(), description, image }, type: ADD_LIST };
+  return { payload: { ...payload, id: shortid.generate() }, type: ADD_LIST };
 };
 
 // reducer

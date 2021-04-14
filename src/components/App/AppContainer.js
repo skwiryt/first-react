@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  addList: title => dispatch(createActionAddList({title})),
+  addList: partPayload => dispatch(createActionAddList(partPayload)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
