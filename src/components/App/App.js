@@ -1,59 +1,29 @@
 import React from 'react';
+import Home from '../Home/HomeContainer';
+import Info from '../Info/Info';
+import FAQ from '../FAQ/FAQ';
+import {BrowserRouter, Route} from 'react-router-dom';
+import MainLayout from '../MainLayout/MainLayout';
+import {AnimatedSwitch} from 'react-router-transition';
 import styles from './App.scss';
 import List from '../List/ListContainer';
-import Search from '../Search/SearchContainer';
-import {settings} from '../../data/dataStore';
-import Creator from '../Creator/Creator';
-import PropTypes from 'prop-types';
-import Hamburger from '../Hamburger/HamburgerContainer';
-import Container from '../Container/Container';
 
+const App = () => (
+  <BrowserRouter>
+    <MainLayout>
+      <AnimatedSwitch
+        atEnter={{ opacity: 0 }}
+        atLeave={{ opacity: 1 }}
+        atActive={{ opacity: 1 }}
+        className={styles.switchWrapper}
+      >        
+        <Route exact path='/' component={Home} />
+        <Route exact path='/info' component={Info} />
+        <Route exact path='/faq' component={FAQ} />
+        <Route exact path='/list/:id' component={List} />
+      </AnimatedSwitch>
+    </MainLayout>    
+  </BrowserRouter>
+);
 
-class App extends React.Component {
- 
-  static propTypes = {
-    title: PropTypes.node,
-    subtitle: PropTypes.node,
-    lists: PropTypes.array,
-    addList: PropTypes.func,
-  }
-  
-  prepareAddList = (title) => {
-    console.log('prepareAddColumn is called');
-    const description = prompt('Please, give the description of the list');
-    const image = prompt('Please, give url of the image');
-    const partPayload = {
-      description,
-      image,
-      title,
-    };
-    this.props.addList(partPayload);
-  };
-
-  render() {
-    const {title, subtitle, lists} = this.props;    
-    return (
-      <main className={styles.component}>
-        <h1 className={styles.title}>{title}</h1>
-        <h2 className={styles.subtitle}>{subtitle}</h2>
-        <Container>
-          <div className={styles.navigation}>
-            <Search />
-            {/*<div className={styles.creator}>*/}
-            <Creator text={settings.listCreatorText} action={this.prepareAddList} />
-            {/*</div>*/}
-            <Hamburger />
-          </div>
-        </Container>
-        
-        
-        <div className={styles.lists}>
-          {lists.map(listData => (
-            <List key={listData.id} {...listData} />
-          ))}
-        </div>
-      </main>
-    );
-  }
-}
 export default App;

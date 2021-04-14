@@ -14,6 +14,30 @@ export const settings = {
   hamburger: {
     icon: 'hamburger',
   },
+  FAQ: {
+    titleText: 'Frequently Asked Questions',
+    imgUrl: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,' +
+            ' sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' +
+            ' Ut enim ad minim veniam, quis nostrud exercitation ullamco' +
+            ' laboris nisi ut aliquip ex ea commodo consequat.' + 
+            ' Duis aute irure dolor in reprehenderit in voluptate velit' + 
+            ' esse cillum dolore eu fugiat nulla pariatur.' +
+            ' Excepteur sint occaecat cupidatat non proident, sunt in' +
+            ' culpa qui officia deserunt mollit anim id est laborum.',
+  },
+  info: {
+    titleText: 'Information about us',
+    imgUrl: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,' +
+            ' sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' +
+            ' Ut enim ad minim veniam, quis nostrud exercitation ullamco' +
+            ' laboris nisi ut aliquip ex ea commodo consequat.' + 
+            ' Duis aute irure dolor in reprehenderit in voluptate velit' + 
+            ' esse cillum dolore eu fugiat nulla pariatur.' +
+            ' Excepteur sint occaecat cupidatat non proident, sunt in' +
+            ' culpa qui officia deserunt mollit anim id est laborum.',
+  },
   defaultListDescription: '<p>I can do all the things!!!</p>',
   defaultColumnIcon: 'list-alt',
 };
@@ -30,6 +54,18 @@ const lists = [
     title: 'Things to do <sup>soon!</sup>',
     description: 'Interesting things I want to check out!',
     image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  },
+  {
+    id: 'list-2',
+    title: 'Things to do <sup>...later.</sup>',
+    description: 'Things to check out one day!',
+    image: 'https://images.pexels.com/photos/6348107/pexels-photo-6348107.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+  },
+  {
+    id: 'list-3',
+    title: 'Things to dump <sup>probably.</sup>',
+    description: 'Somebody proposed this crap!',
+    image: 'https://images.pexels.com/photos/416322/pexels-photo-416322.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
   },
 ];
 

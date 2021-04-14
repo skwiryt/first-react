@@ -1,0 +1,34 @@
+@import '../../styles/settings.scss';
+
+.component {
+  padding: $base-size;  
+}
+
+.title {
+  padding: ($base-size * 3) 0;
+  text-align: center;
+  font-size: ($base-size * 3);
+  text-transform: uppercase;
+}
+
+.subtitle {
+  padding: ($base-size * 2) 0;
+  text-align: center;
+  font-size: ($base-size * 2);
+  font-style: italic;
+  font-weight: normal;
+}
+
+.title + .subtitle {
+  margin-top: (- $base-size * 3);
+}
+
+
+.navigation {
+  width: 100%;
+  margin-bottom: 2*$base-size;
+  display: flex;
+  align-items:flex-start;
+  justify-content: space-between;
+}
+
