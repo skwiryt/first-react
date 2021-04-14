@@ -6,6 +6,7 @@ import {settings} from '../../data/dataStore';
 import Creator from '../Creator/Creator';
 import PropTypes from 'prop-types';
 import Hamburger from '../Hamburger/HamburgerContainer';
+import Container from '../Container/Container';
 
 
 class App extends React.Component {
@@ -35,13 +36,16 @@ class App extends React.Component {
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
         <h2 className={styles.subtitle}>{subtitle}</h2>
-        <div className={styles.navigation}>
-          <Search />
-          {/*<div className={styles.creator}>*/}
-          <Creator text={settings.listCreatorText} action={this.prepareAddList} />
-          {/*</div>*/}
-          <Hamburger />
-        </div>
+        <Container>
+          <div className={styles.navigation}>
+            <Search />
+            {/*<div className={styles.creator}>*/}
+            <Creator text={settings.listCreatorText} action={this.prepareAddList} />
+            {/*</div>*/}
+            <Hamburger />
+          </div>
+        </Container>
+        
         
         <div className={styles.lists}>
           {lists.map(listData => (
