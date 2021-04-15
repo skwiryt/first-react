@@ -5,15 +5,15 @@ import FAQ from '../FAQ/FAQ';
 import {BrowserRouter, Route} from 'react-router-dom';
 import MainLayout from '../MainLayout/MainLayout';
 import {AnimatedSwitch} from 'react-router-transition';
-import styles from './App.scss';
 import List from '../List/ListContainer';
+import styles from './App.scss';
 
 const App = () => (
   <BrowserRouter>
     <MainLayout>
       <AnimatedSwitch
         atEnter={{ opacity: 0 }}
-        atLeave={{ opacity: 1 }}
+        atLeave={{ opacity: 0 }}
         atActive={{ opacity: 1 }}
         className={styles.switchWrapper}
       >        
