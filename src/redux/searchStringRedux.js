@@ -1,9 +1,4 @@
-/*
-  getSearchString,
-  countVisibleCards,
-  countAllCards,
-  createAction_changeSearchString,
-*/
+
 // selectors
 
 export const getSearchString = ({searchString}) => searchString;
